@@ -21,9 +21,9 @@ public class Main {
     }
 
     public final static void test1() {
-        System.out.println("Test1 ======================================");
-        String sql1 = "select * from country where country.country_id = ?";
-        String sql2 = "select * from city where city.country_id = ?";
+        System.out.println("第一题");
+        String sql1 = "SELECT * FROM country WHERE country.country_id = ?";
+        String sql2 = "SELECT * FROM city WHERE city.country_id = ?";
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -75,7 +75,7 @@ public class Main {
     }
 
     public final static void test2() {
-        System.out.println("Test2 ======================================");
+        System.out.println("第二题");
         String sql1 = "select * from customer where customer.customer_id = ?";
         String sql2 = "select f.*, r.rental_date from film f, rental r, inventory i where r.customer_id = ? and r.inventory_id = i.inventory_id and i.film_id = f.film_id order by r.rental_date DESC";
         Connection connection = null;

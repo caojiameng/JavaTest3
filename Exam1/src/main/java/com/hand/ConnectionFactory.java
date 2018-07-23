@@ -15,19 +15,14 @@ public class ConnectionFactory {
     static {
         Map<String, String> env = System.getenv();
         DRIVER = env.get("driver");
-        String builder = "jdbc:mysql://" +
-                System.getenv("ip") +
-                ":" +
-                System.getenv("port") +
-                "/" +
-                System.getenv("database") +
+        String url = "jdbc:mysql://" +
+                System.getenv("ip") + ":" + System.getenv("port") + "/" + System.getenv("database") +
                 "?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false";
-        URL = builder;
+        URL = url;
         USER = env.get("user");
         PASSWORD = env.get("password");
     }
 
-//    "jdbc:mysql://192.168.99.100:3306/sakila?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false"
     public static Connection getConnection() throws SQLException, ClassNotFoundException {
         Class.forName(DRIVER);
         return DriverManager.getConnection(URL, USER, PASSWORD);
