@@ -25,6 +25,7 @@ public class ConnectionFactory {
 
     public static Connection getConnection() throws SQLException, ClassNotFoundException {
         Class.forName(DRIVER);
-        return DriverManager.getConnection(URL, USER, PASSWORD);
+        Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+        return conn;
     }
 }
