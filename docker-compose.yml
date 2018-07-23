@@ -1,0 +1,29 @@
+version: "3"
+services:
+  mysql:
+    container_name: mysqlTT
+    image: zmf/mysql:1.0-my
+    hostname: mysql
+    ports:
+    - "3306:3306"
+    environment:
+    - MYSQL_ROOT_PASSWORD: root
+   # volumes:
+   # - ./mysql/mysql_data:/var/lib/mysql  # 挂载的目录，非必须
+   # - ./mysql/mysql_db.cnf:/etc/mysql/conf.d/mysql_db.cnf # 配置文件，非必须
+    expose:
+    - "3306"
+  java:
+    container_name: exam1
+    image: zmf/java:1.0-my
+    hostname: exam1
+    command: java -jar /root/Exam1-1.0.jar
+    environment:
+    - driver: com.mysql.jdbc.Driver
+    - ip: 192.168.99.100
+    - port: 3306
+    - database: sakila
+    - user: root
+    - password: root
+    - country-id: 23
+    - customer-id: 23
