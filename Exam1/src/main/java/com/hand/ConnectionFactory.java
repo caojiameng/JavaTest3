@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.Map;
 
 
-public class ConnectionManager {
+public class ConnectionFactory {
     public static final String DRIVER;
     public static final String URL;
     public static final String USER;

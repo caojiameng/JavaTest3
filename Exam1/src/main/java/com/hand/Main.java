@@ -28,7 +28,7 @@ public class Main {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         try {
-            connection = ConnectionManager.getConnection();
+            connection = ConnectionFactory.getConnection();
             preparedStatement = connection.prepareStatement(sql1);
             preparedStatement.setInt(1, COUNTRY_ID);
             resultSet = preparedStatement.executeQuery();
@@ -82,7 +82,7 @@ public class Main {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         try {
-            connection = ConnectionManager.getConnection();
+            connection = ConnectionFactory.getConnection();
             preparedStatement = connection.prepareStatement(sql1);
             preparedStatement.setInt(1, CUSTOMER_ID);
             resultSet = preparedStatement.executeQuery();
