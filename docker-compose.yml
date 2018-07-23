@@ -2,7 +2,7 @@ version: "3"
 services:
   mysql:
     container_name: mysqlTT
-    image: zmf/mysql:1.0-my
+    image: registry.cn-hangzhou.aliyuncs.com/choerodon-tools/mysql:5.7.17
     hostname: mysql
     ports:
     - "3306:3306"
@@ -15,7 +15,7 @@ services:
     - "3306"
   java:
     container_name: exam1
-    image: zmf/java:1.0-my
+    image: registry.saas.hand-china.com/hap-cloud/base:latest
     hostname: exam1
     command: java -jar /root/Exam1-1.0.jar
     environment:
