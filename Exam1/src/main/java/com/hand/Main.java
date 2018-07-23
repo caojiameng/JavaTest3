@@ -16,12 +16,13 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        test1();
-        test2();
+        System.out.println("=======第一题====");
+        selectByCountryID();
+        System.out.println("======第二题=====");
+        selectByCostumerID();
     }
 
-    public final static void test1() {
-        System.out.println("第一题");
+    public final static void  selectByCountryID() {
         String sql1 = "SELECT * FROM country WHERE country.country_id = ?";
         String sql2 = "SELECT * FROM city WHERE city.country_id = ?";
         Connection connection = null;
@@ -74,8 +75,8 @@ public class Main {
         }
     }
 
-    public final static void test2() {
-        System.out.println("第二题");
+    public final static void selectByCostumerID() {
+
         String sql1 = "select * from customer where customer.customer_id = ?";
         String sql2 = "select f.*, r.rental_date from film f, rental r, inventory i where r.customer_id = ? and r.inventory_id = i.inventory_id and i.film_id = f.film_id order by r.rental_date DESC";
         Connection connection = null;
