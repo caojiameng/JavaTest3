@@ -77,8 +77,8 @@ public class Main {
 
     public final static void selectByCostumerID() {
 
-        String sql1 = "select * from customer where customer.customer_id = ?";
-        String sql2 = "select f.*, r.rental_date from film f, rental r, inventory i where r.customer_id = ? and r.inventory_id = i.inventory_id and i.film_id = f.film_id order by r.rental_date DESC";
+        String sql1 = "SELECT * FROM customer WHERE customer.customer_id = ?";
+        String sql2 = "SELECT f.*, r.rental_date FROM film f, rental r, inventory i WHERE r.customer_id = ? AND r.inventory_id = i.inventory_id AND i.film_id = f.film_id ORDER BY r.rental_date DESC";
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
